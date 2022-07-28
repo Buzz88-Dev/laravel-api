@@ -14,6 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// Route::middleware('auth:api')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
+
+Route::get('/posts','Api\PostController@index')->name('api.posts.index'); //le uniche due rotte che vogliamo sono la index e lo show
+// in realta scriviamo /posts ma nella route è come se scrivessi: http://127.0.0.1:8000/api/posts
+// le view non ci sono perche è un api e quindi mi ritorna json

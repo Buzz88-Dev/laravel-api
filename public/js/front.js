@@ -5103,7 +5103,25 @@ module.exports = {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'App'
+  name: 'App',
+  data: function data() {
+    return {
+      posts: []
+    };
+  },
+  created: function created() {
+    var _this = this;
+
+    // qui facciamo la richiesta con axios di tipo get
+    axios.get('http://127.0.0.1:8000/api/posts').then(function (response) {
+      _this.posts = response.data.response.data; // me ne da 2 perche in PostController ho indicato: $per_page = $request->query('per_page', 2);
+
+      console.log(_this.posts);
+      console.log(response); // andare in http://127.0.0.1:8000/ e guardare la console; l oggetto risposta è piu complesso rispetto a quello che ci serve; i dati sono in data, response, data
+    })["catch"](function (error) {
+      return console.log('errore!!!');
+    });
+  }
 });
 
 /***/ }),
@@ -5130,7 +5148,23 @@ var staticRenderFns = [function () {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _c("div", [_c("h1", [_vm._v("Work in Progress")])]);
+  return _c("div", {
+    staticClass: "card",
+    staticStyle: {
+      width: "18rem"
+    }
+  }, [_c("div", {
+    staticClass: "card-body"
+  }, [_c("h5", {
+    staticClass: "card-title"
+  }, [_vm._v("Card title")]), _vm._v(" "), _c("p", {
+    staticClass: "card-text"
+  }, [_vm._v("Some quick example text to build on the card title and make up the bulk of the card's content.")]), _vm._v(" "), _c("a", {
+    staticClass: "btn btn-primary",
+    attrs: {
+      href: "#"
+    }
+  }, [_vm._v("Go somewhere")])])]);
 }];
 render._withStripped = true;
 
