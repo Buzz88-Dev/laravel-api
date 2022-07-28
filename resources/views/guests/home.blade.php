@@ -11,12 +11,15 @@
 
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
+        <div id="root"></div>
+
+        <script src="{{ asset('js/front.js') }}"></script>
+        {{-- <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
                         {{-- admin lo vedo solo se sono registrato --}}
-                        <a href="{{ route('admin.dashboard') }}">Admin Dashboard</a>
+                        {{-- <a href="{{ route('admin.dashboard') }}">Admin Dashboard</a>
                     @else
                         <a href="{{ route('login') }}">Login</a>
 
@@ -32,7 +35,7 @@
                     <h2>Boolpress</h2>
                 </div>
             </div>
-        </div>
+        </div> --}}
     </body>
 </html>
 
