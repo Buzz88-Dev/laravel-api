@@ -15,7 +15,7 @@ class PostController extends Controller
      */
     public function index(Request $request)  // il Request è quell oggetto che contiene tutte le informazioni riguardo alla richiesta fatta dall utente (Header, indirizzo, parametri, cookie)
     {
-        $per_page = $request->query('per_page', 10);   // ora vado in: http://127.0.0.1:8000/api/posts?page=1  e ottengo due oggetti data per page (cambiare numero pagina)
+        $per_page = $request->query('per_page', 9);   // ora vado in: http://127.0.0.1:8000/api/posts?page=1  e ottengo due oggetti data per page (cambiare numero pagina)
         if ($per_page < 1 || $per_page > 10){      // ho impostato 2 come valore per_page
             return response()->json(['success' => false], 400);  // errore 400 lo troviamo in ispector, Network sotto a Status
         };
