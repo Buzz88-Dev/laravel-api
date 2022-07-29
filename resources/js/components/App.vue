@@ -3,7 +3,7 @@
         <h1 class="text-center">Boolpress</h1>
         <div class="row g-2">
             <div v-for="post in posts" :key="post.id" class="col-sm-6 col-md-4">
-                <div class="card">
+                <div class="card h-100">
                     <img :src="post.image" class="card-img-top" :alt="post.title">
                     <div class="card-body d-flex flex-column">
                         <h5 class="card-title">{{ post.title }}</h5>

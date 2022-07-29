@@ -5153,7 +5153,7 @@ var render = function render() {
       key: post.id,
       staticClass: "col-sm-6 col-md-4"
     }, [_c("div", {
-      staticClass: "card"
+      staticClass: "card h-100"
     }, [_c("img", {
       staticClass: "card-img-top",
       attrs: {
